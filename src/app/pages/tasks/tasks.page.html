@@ -8,8 +8,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
- <app-task-card></app-task-card>
-  <ion-card>
+ <app-task-card [status]="'hold'" [updatedAt]="'22/04/2021 16:04:00 '" [createdAt]="'22/04/2021 16:04:00'" [notes]="'Laporan dikumpulkan sebelum praktikum dimulai'"></app-task-card>
+ <app-task-card [status]="'processing'" [updatedAt]="'22/04/2021 16:04:00 '" [createdAt]="'22/04/2021 16:04:00'" [notes]="'Laporan dikumpulkan sebelum praktikum dimulai'"></app-task-card>
+ <app-task-card [value]="'99'" [status]="'finished'" [updatedAt]="'22/04/2021 16:04:00 '" [createdAt]="'22/04/2021 16:04:00'" [notes]="'Laporan dikumpulkan sebelum praktikum dimulai'"></app-task-card>
+  <!-- <ion-card>
    
     <ion-card-content>
       <ion-item lines="none">
@@ -88,6 +90,6 @@
         lihat semua
       </ion-button>
     </ion-card-content>
-  </ion-card>
+  </ion-card> -->
 </ion-content>
 
