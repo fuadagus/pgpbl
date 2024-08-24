@@ -7,14 +7,20 @@ import { IonicModule } from '@ionic/angular';
 import { TasksPageRoutingModule } from './tasks-routing.module';
 
 import { TasksPage } from './tasks.page';
+import { TaskCardComponent } from 'src/app/components/task-card/task-card.component';
+import { HomePage } from '../home/home.page';
+import { HomePageModule } from '../home/home.module';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TasksPageRoutingModule
+    TasksPageRoutingModule,
+    HomePageModule
   ],
-  declarations: [TasksPage]
+  declarations: [TasksPage],
+ 
 })
 export class TasksPageModule {}
