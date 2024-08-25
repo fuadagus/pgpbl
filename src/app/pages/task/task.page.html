@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" color="primary">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tugas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <img
+    src="https://www.zenius.net/blog/wp-content/uploads/2015/04/Peta-UGM--1024x682.png"
+    alt=""
+  />
+  <ion-card>
+    <ion-card-content>
+      <p>Alamat : Alamat Palsu, 26</p>
+      <p>Kode Pos: 6848</p>
+      <p>Kota/ Kabupaten: Kabupaten Sleman</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-list lines="inset">
+    <ion-item>
+      <ion-label position="floating">Catatan</ion-label>
+      <ion-textarea placeholder> </ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-button size="full" expand="block"  color="primary" (click)="chooseTask()">
+    Pilih
+  </ion-button>
+  
+</ion-content>

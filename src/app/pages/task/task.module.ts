@@ -4,19 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoaderPageRoutingModule } from './loader-routing.module';
+import { TaskPageRoutingModule } from './task-routing.module';
 
-import { LoaderPage } from './loader.page';
-import { AppRoutingModule } from 'src/app/app-routing.module';
+import { TaskPage } from './task.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LoaderPageRoutingModule,
-  
+    TaskPageRoutingModule
   ],
-  declarations: [LoaderPage]
+  declarations: [TaskPage]
 })
-export class LoaderPageModule {}
+export class TaskPageModule {}

@@ -35,7 +35,7 @@
       
       <ion-label color="success">Nilai: {{value}}</ion-label>
     </ion-item>
-    <ion-button *ngIf="hasFooter" color="success" fill="clear" size="full">
+    <ion-button *ngIf="hasFooter" color="success" fill="clear" size="full" (click)="goToTasks()">
       lihat semua
     </ion-button>
   </ion-card-content>

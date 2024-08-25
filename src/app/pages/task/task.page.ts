@@ -2,18 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.page.html',
-  styleUrls: ['./register.page.scss'],
+  selector: 'app-task',
+  templateUrl: './task.page.html',
+  styleUrls: ['./task.page.scss'],
 })
-export class RegisterPage implements OnInit {
+export class TaskPage implements OnInit {
 
   constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
-  register() {
+
+  chooseTask() {
     this.router.navigate(['home']);
   }
 

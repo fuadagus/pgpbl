@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-card',
@@ -14,8 +15,13 @@ export class TaskCardComponent  implements OnInit {
   @Input() status:string= "null";
   @Input() notes:string= "Tidak ada catatan";
   @Input() value:string= "Belum dinilai";
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {}
+
+
+  goToTasks() {
+    this.router.navigate(['tasks']);
+  }
 
 }
