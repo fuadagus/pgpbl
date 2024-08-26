@@ -24,7 +24,9 @@
             <ion-label position="floating">Password</ion-label>
             <ion-input type="password" formControlName="password"></ion-input>
           </ion-item>
-          <app-error-message message="Password tidak boleh kosong"  *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['required']"></app-error-message>
+          <app-error-message  [field]="form.get('password')"  error="required"  message="Password tidak boleh kosong" ></app-error-message>
+
+          <!-- <app-error-message message="Password tidak boleh kosong"  *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['required']"></app-error-message> -->
           <!-- <ion-label color="danger" *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['required']"
           >
           Password tidak boleh kosong</ion-label> -->
