@@ -21,6 +21,7 @@ describe('TaskCardComponent', () => {
   }));
 
   it('should go to tasks', () => {
+    spyOn(router, 'navigate');
     component.goToTasks();
     expect(router.navigate).toHaveBeenCalledWith(['tasks'])
   });

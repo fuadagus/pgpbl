@@ -14,7 +14,8 @@ describe('TaskPage', () => {
   });
 
   it('should go to home', () => {
-    component.chooseTask;
+    spyOn(router, 'navigate');
+    component.chooseTask();
     expect(router.navigate).toHaveBeenCalledWith(['home']);
   });
 });

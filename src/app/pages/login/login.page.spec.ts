@@ -13,6 +13,13 @@ describe('LoginPage', () => {
     router = TestBed.get(Router);
   });
 
+  it('should create form on init', () => {
+   
+      
+    component.ngOnInit();
+    expect(component.form).not.toBeUndefined();
+})
+
   it('should go to home on login', () => {
     spyOn(router, 'navigate');
     component.login();
