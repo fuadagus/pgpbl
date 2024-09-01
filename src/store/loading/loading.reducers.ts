@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { hide, show } from "./loading.action";
+import { hide, show } from "./loading.actions";
 import { LoadingState } from "./LoadingState";
 
 

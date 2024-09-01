@@ -5,7 +5,7 @@ import { LoadingComponent } from './loading.component';
 import { Store, StoreModule } from '@ngrx/store';
 import { loadingReducer } from 'src/store/loading/loading.reducers';
 import { AppState } from 'src/store/AppState';
-import { hide, show } from 'src/store/loading/loading.action';
+import { hide, show } from 'src/store/loading/loading.actions';
 
 describe('LoadingComponent', () => {
   let component: LoadingComponent;

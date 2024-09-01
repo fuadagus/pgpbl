@@ -1,5 +1,5 @@
 import { createAction } from "@ngrx/store";
-import { hide, show } from "./loading.action";
+import { hide, show } from "./loading.actions";
 import { loadingReducer } from "./loading.reducers";
 import { LoadingState } from "./LoadingState";
 
