@@ -15,7 +15,8 @@ import { LoadingComponent } from './components/loading/loading.component';
   imports: [BrowserModule,
              IonicModule.forRoot(), 
              AppRoutingModule,
-             ...AppStoreModule,StoreDevtoolsModule.instrument({maxAge: 25})
+             ...AppStoreModule,
+             StoreDevtoolsModule.instrument({maxAge: 25})
             ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

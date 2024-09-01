@@ -32,8 +32,7 @@
           Password tidak boleh kosong</ion-label> -->
           <ion-button color="clear" fill="clear" size="full"></ion-button>
           <ion-button color="primary" size="full" [disabled]="!form.valid" (click)='login()'>Login</ion-button>
-          <ion-button color="primary" fill="clear" size="full" [disabled]="!form.get('email')">Lupa password</ion-button>
-          
+          <ion-button color="primary" fill="clear" size="full" [disabled]="form.get('email')?.valid"   (click)="forgotEmailPassword()">Lupa password</ion-button>    
           
         <ion-button color="dark" fill="clear" size="full">Belum punya akun?&nbsp;<a href="register"  style="text-decoration: none">Daftar</a>
         </ion-button>

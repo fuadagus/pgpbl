@@ -7,7 +7,8 @@ const initialState: LoadingState = {
     show:false
 }
 
-const reducer = createReducer({},
+const reducer = createReducer(
+    initialState,
 on(show, ()=> {
     return {show: true};
 }),

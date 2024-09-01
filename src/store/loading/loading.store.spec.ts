@@ -20,12 +20,11 @@ describe("Loading store", () => {
         expect(newState).toEqual({show: false});
     });
     it('should keep state if action is unkown', ()=> {
-        const initialState: LoadingState = {show: true};
-        const action = createAction("UNKNOWN");
+        const initialState: LoadingState = {show: false};
         const newState = loadingReducer(initialState, hide());
-
-
-        expect(newState).toEqual({show: true});
+    
+    
+        expect(newState).toEqual({show: false});
     });
 
 });

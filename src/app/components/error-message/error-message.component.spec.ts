@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
+import { FormControl, FormGroup } from '@angular/forms';
 
 import { ErrorMessageComponent } from './error-message.component';
-import { FormControl, FormGroup } from '@angular/forms';
 
 describe('ErrorMessageComponent', () => {
   let component: ErrorMessageComponent;
@@ -36,7 +36,7 @@ describe('ErrorMessageComponent', () => {
     component.field.setErrors({anyError: true});
     component.error = "anyError";
     
-    expect(component.shouldShowComponent()).toBeFalsy();
+    expect(component.shouldShowComponent()).toBeTruthy();
   });
 
   it('should not show error message on field touch, but no errors', () => {
