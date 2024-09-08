@@ -27,9 +27,11 @@ export class RegisterPage implements OnInit {
   }
 
   register() {
+    if (this.registerForm.getForm().valid) {
     this.router.navigate(['home']);
 
   }
+}
 
   private createForm() {
     this.registerForm = new RegisterPageForm(this.formBuilder);
