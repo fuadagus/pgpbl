@@ -24,7 +24,7 @@ export class RegisterPage implements OnInit , OnDestroy{
   registerStateSubscription!: Subscription;
 
   constructor( private formBuilder: FormBuilder, private store: Store<AppState>,
-      private toastController: ToastController, private router: Router) { }
+      private toastController: ToastController) { }
 
   ngOnInit() {
     this.createForm();
@@ -49,47 +49,54 @@ export class RegisterPage implements OnInit , OnDestroy{
   }
 
   private watchRegisterState() {
-this.store.select('register').subscribe(state => {
+     this.registerStateSubscription =   this.store.select('register').subscribe(state => {
   this.toggleLoading(state);
 
-  if (state.isRegistered) {
-    this.router.navigate(['home']);
-  }
+  // if (state.isRegistered) {
+  //   this.store.dispatch(login({
+  //     email: this.registerForm.getForm().value.email,
+  //     password: this.registerForm.getForm().value.password
+  //   }));
+  //   // this.router.navigate(['home']);
+  // }
 
-  if(state.error) {
-    this.toastController.create({
-      message: state.error.message,
-      duration: 5000,
-      header: 'Registrasi belum selesai'
-    }).then(toast => toast.present());}})
+  this.onError(state);
+
+  // if(state.error) {
+  //   this.toastController.create({
+  //     message: state.error.message,
+  //     duration: 5000,
+  //     header: 'Registrasi belum selesai'
+  //   }).then(toast => toast.present());}})
 
     // this.registerStateSubscription = this.store.select('register').subscribe(state => {
     //   this.toggleLoading(state);
 
-    //   this.onRegistered(state);
-    //   this.onError(state);
+      this.onRegistered(state);
+      // this.onError(state);
     // })
+  });
+  }
+  private onRegistered(state: RegisterState) {
+    if (state.isRegistered) {
+      this.store.dispatch(login({
+        email: this.registerForm.getForm().value.email,
+        password: this.registerForm.getForm().value.password
+      }));
+    }
   }
 
-  // private onRegistered(state: RegisterState) {
-  //   if (state.isRegistered) {
-  //     this.store.dispatch(login({
-  //       email: this.registerForm.getForm().value.email,
-  //       password: this.registerForm.getForm().value.password
-  //     }));
-  //   }
-  // }
+  private onError(state: RegisterState) {
+    if (state.error) {
+      this.toastController.create({
+        message: state.error,
+        duration: 5000,
+        header: 'Registration not done'
+      }).then(toast => toast.present());
+    }
+  }
 
-  // private onError(state: RegisterState) {
-  //   if (state.error) {
-  //     this.toastController.create({
-  //       message: state.error,
-  //       duration: 5000,
-  //       header: 'Registration not done'
-  //     }).then(toast => toast.present());
-  //   }
-  // }
-
+    
   private toggleLoading(state: RegisterState) {
       if (state.isRegistering) {
         this.store.dispatch(show());
