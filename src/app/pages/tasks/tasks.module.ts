@@ -10,6 +10,7 @@ import { TasksPage } from './tasks.page';
 import { TaskCardComponent } from 'src/app/components/task-card/task-card.component';
 import { HomePage } from '../home/home.page';
 import { HomePageModule } from '../home/home.module';
+import { TaskCardModule } from 'src/app/components/task-card/task-card.module';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { HomePageModule } from '../home/home.module';
     FormsModule,
     IonicModule,
     TasksPageRoutingModule,
-    HomePageModule
+    TaskCardModule
   ],
   declarations: [TasksPage],
  

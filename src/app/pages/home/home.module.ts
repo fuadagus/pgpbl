@@ -8,15 +8,17 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import { TaskCardComponent } from 'src/app/components/task-card/task-card.component';
+import { TaskCardModule } from 'src/app/components/task-card/task-card.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    TaskCardModule
   ],
-  declarations: [HomePage, TaskCardComponent],
-  exports: [TaskCardComponent]
+  declarations: [HomePage]
+  // exports: [TaskCardComponent]
 })
 export class HomePageModule {}
